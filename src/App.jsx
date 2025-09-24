@@ -216,7 +216,7 @@ function App() {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-white text-white hover:bg-white hover:text-gray-900"
+                  className="bg-gray-900 border-gray-900 text-white hover:bg-gray-800 hover:border-gray-800 shadow-lg"
                   onClick={() => scrollToSection('contact')}
                 >
                   Get In Touch
