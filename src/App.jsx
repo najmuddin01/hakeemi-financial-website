@@ -20,7 +20,7 @@ import {
 } from 'lucide-react'
 import './App.css'
 import './scroll-animations.css'
-import logo from './assets/logo-horizontal.png'
+import logo from './assets/logo-200x100.png'
 import founderImage from './assets/founder-image.jpg'
 import heroBanner from './assets/banner-hero.png'
 
@@ -128,9 +128,13 @@ function App() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-green-100 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-24">
-            <div className="flex items-center">
-              <img src={logo} alt="Hakeemi Logo" className="w-[300px] h-[100px] object-contain hover:scale-105 transition-transform duration-200" />
+          <div className="flex justify-between items-center h-20">
+            <div className="flex items-center justify-start flex-shrink-0">
+              <img 
+                src={logo} 
+                alt="Hakeemi Logo" 
+                className="w-[160px] h-[80px] sm:w-[200px] sm:h-[100px] object-contain hover:scale-105 transition-transform duration-200 ml-0" 
+              />
             </div>
             
             {/* Desktop Navigation */}
@@ -179,11 +183,10 @@ function App() {
           )}
         </div>
       </nav>
-
       {/* Hero Section */}
       <section 
         id="home" 
-        className="pt-24 min-h-screen flex items-center relative bg-cover bg-center bg-no-repeat"
+        className="pt-20 min-h-screen flex items-center relative bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${heroBanner})`
         }}
@@ -596,10 +599,14 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="space-y-4">
-              <div className="flex items-center">
-                <img src={logo} alt="Hakeemi Logo" className="w-[250px] h-[83px] object-contain" />
+              <div className="flex items-start justify-start">
+                <img 
+                  src={logo} 
+                  alt="Hakeemi Logo" 
+                  className="w-[160px] h-[80px] sm:w-[200px] sm:h-[100px] object-contain ml-0" 
+                />
               </div>
-              <p className="text-gray-400">
+              <p className="text-gray-400 text-left">
                 Empowering your financial future through innovative strategies and transformative solutions.
               </p>
             </div>
