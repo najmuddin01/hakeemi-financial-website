@@ -494,12 +494,22 @@ function App() {
 
             <Card className="p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Start Your Transformation</h3>
-              <form className="space-y-6">
+              <form 
+                action="https://formspree.io/f/xdkogpvw" 
+                method="POST"
+                className="space-y-6"
+              >
+                <input type="hidden" name="_to" value="info@hakeemi.org" />
+                <input type="hidden" name="_subject" value="New Contact Form Submission - Hakeemi Financial Consultancy" />
+                <input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.origin + "?success=true" : ""} />
+                
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
                     <input 
                       type="text" 
+                      name="firstName"
+                      required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                       placeholder="Your first name"
                     />
@@ -508,6 +518,8 @@ function App() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
                     <input 
                       type="text" 
+                      name="lastName"
+                      required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                       placeholder="Your last name"
                     />
@@ -518,6 +530,8 @@ function App() {
                   <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                   <input 
                     type="email" 
+                    name="email"
+                    required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="your.email@company.com"
                   />
@@ -527,6 +541,7 @@ function App() {
                   <label className="block text-sm font-medium text-gray-700 mb-2">Company</label>
                   <input 
                     type="text" 
+                    name="company"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="Your company name"
                   />
@@ -536,12 +551,14 @@ function App() {
                   <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                   <textarea 
                     rows={4}
+                    name="message"
+                    required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="Tell us about your financial consulting needs..."
                   ></textarea>
                 </div>
                 
-                <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
+                <Button type="submit" className="w-full bg-green-600 hover:bg-green-700 text-white">
                   Send Message
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
