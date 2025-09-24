@@ -440,7 +440,7 @@ function App() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Email Us</h3>
-                    <p className="text-gray-600">info@hakeemi.com</p>
+                    <p className="text-gray-600">info@hakeemi.org</p>
                   </div>
                 </div>
 
@@ -450,7 +450,7 @@ function App() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Call Us</h3>
-                    <p className="text-gray-600">+971 XX XXX XXXX</p>
+                    <p className="text-gray-600">+965 97610786</p>
                   </div>
                 </div>
 
@@ -579,8 +579,8 @@ function App() {
             <div className="space-y-4">
               <h3 className="font-semibold text-lg">Contact Info</h3>
               <div className="space-y-2 text-gray-400">
-                <p>Email: info@hakeemi.com</p>
-                <p>Phone: +971 XX XXX XXXX</p>
+                <p>Email: info@hakeemi.org</p>
+                <p>Phone: +965 97610786</p>
                 <p>Locations: Middle East & India</p>
               </div>
             </div>
