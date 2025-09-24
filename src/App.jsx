@@ -19,7 +19,7 @@ import {
   X
 } from 'lucide-react'
 import './App.css'
-import logo from './assets/logo-transparent-new.png'
+import logo from './assets/logo-horizontal.png'
 import founderImage from './assets/founder-image.jpg'
 
 function App() {
@@ -101,9 +101,9 @@ function App() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-green-100 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-24">
             <div className="flex items-center">
-              <img src={logo} alt="Hakeemi Logo" className="h-12 w-auto hover:scale-105 transition-transform duration-200" />
+              <img src={logo} alt="Hakeemi Logo" className="w-[300px] h-[100px] object-contain hover:scale-105 transition-transform duration-200" />
             </div>
             
             {/* Desktop Navigation */}
@@ -154,7 +154,7 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-16 min-h-screen flex items-center">
+      <section id="home" className="pt-24 min-h-screen flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
@@ -574,7 +574,7 @@ function App() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="space-y-4">
               <div className="flex items-center">
-                <img src={logo} alt="Hakeemi Logo" className="h-14 w-auto" />
+                <img src={logo} alt="Hakeemi Logo" className="w-[250px] h-[83px] object-contain" />
               </div>
               <p className="text-gray-400">
                 Empowering your financial future through innovative strategies and transformative solutions.
