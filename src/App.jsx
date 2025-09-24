@@ -21,6 +21,7 @@ import {
 import './App.css'
 import logo from './assets/logo-horizontal.png'
 import founderImage from './assets/founder-image.jpg'
+import heroBanner from './assets/banner-hero.png'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -154,19 +155,25 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-24 min-h-screen flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section 
+        id="home" 
+        className="pt-24 min-h-screen flex items-center relative bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${heroBanner})`
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+          <div className="max-w-4xl">
             <div className="space-y-8">
               <div className="space-y-4">
                 <Badge className="bg-green-100 text-green-800 hover:bg-green-200">
                   Financial Excellence Since 2004
                 </Badge>
-                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
-                  <span className="text-green-600">HAKEEMI</span><br />
+                <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+                  <span className="text-green-400">HAKEEMI</span><br />
                   Financial Consultancy & Transformation
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-xl text-gray-200 leading-relaxed">
                   Empowering your financial future through innovative strategies and transformative solutions.
                 </p>
               </div>
@@ -183,6 +190,7 @@ function App() {
                 <Button 
                   variant="outline" 
                   size="lg"
+                  className="border-white text-white hover:bg-white hover:text-gray-900"
                   onClick={() => scrollToSection('contact')}
                 >
                   Get In Touch
@@ -191,29 +199,18 @@ function App() {
 
               <div className="grid grid-cols-3 gap-8 pt-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-600">20+</div>
-                  <div className="text-sm text-gray-600">Years Experience</div>
+                  <div className="text-3xl font-bold text-green-400">20+</div>
+                  <div className="text-sm text-gray-200">Years Experience</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-600">100+</div>
-                  <div className="text-sm text-gray-600">Projects Completed</div>
+                  <div className="text-3xl font-bold text-green-400">100+</div>
+                  <div className="text-sm text-gray-200">Projects Completed</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-600">2</div>
-                  <div className="text-sm text-gray-600">Countries Served</div>
+                  <div className="text-3xl font-bold text-green-400">2</div>
+                  <div className="text-sm text-gray-200">Countries Served</div>
                 </div>
               </div>
-            </div>
-            
-            <div className="relative">
-              <div className="relative z-10">
-                <img 
-                  src={logo} 
-                  alt="Hakeemi Financial Consultancy" 
-                  className="w-full max-w-md mx-auto rounded-2xl shadow-2xl"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl blur-3xl opacity-20 transform rotate-6"></div>
             </div>
           </div>
         </div>
