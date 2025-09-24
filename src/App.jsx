@@ -19,7 +19,7 @@ import {
   X
 } from 'lucide-react'
 import './App.css'
-import logo from './assets/logo-transparent.png'
+import logo from './assets/logo-transparent-new.png'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
