@@ -16,7 +16,8 @@ import {
   MapPin,
   ChevronDown,
   Menu,
-  X
+  X,
+  MessageCircle
 } from 'lucide-react'
 import './App.css'
 import './scroll-animations.css'
@@ -641,6 +642,20 @@ function App() {
           </div>
         </div>
       </footer>
+
+      {/* WhatsApp Floating Button */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <a
+          href="https://wa.me/96597610786?text=Hello%20Hakeem,%20I%20would%20like%20to%20discuss%20financial%20consulting%20services."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group animate-pulse-green"
+          title="Chat with us on WhatsApp"
+        >
+          <MessageCircle className="h-6 w-6 group-hover:scale-110 transition-transform duration-200" />
+          <span className="ml-2 hidden sm:inline-block font-medium">Chat with Founder</span>
+        </a>
+      </div>
     </div>
   )
 }
