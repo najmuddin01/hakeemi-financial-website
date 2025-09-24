@@ -19,6 +19,7 @@ import {
   X
 } from 'lucide-react'
 import './App.css'
+import './scroll-animations.css'
 import logo from './assets/logo-horizontal.png'
 import founderImage from './assets/founder-image.jpg'
 import heroBanner from './assets/banner-hero.png'
@@ -26,6 +27,7 @@ import heroBanner from './assets/banner-hero.png'
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
+  const [visibleSections, setVisibleSections] = useState(new Set())
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,6 +50,30 @@ function App() {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Intersection Observer for scroll animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections(prev => new Set([...prev, entry.target.id]))
+          }
+        })
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    )
+
+    const sections = document.querySelectorAll('section[id]')
+    sections.forEach(section => observer.observe(section))
+
+    return () => {
+      sections.forEach(section => observer.unobserve(section))
+    }
   }, [])
 
   const scrollToSection = (sectionId) => {
@@ -198,15 +224,15 @@ function App() {
               </div>
 
               <div className="grid grid-cols-3 gap-8 pt-8">
-                <div className="text-center">
+                <div className="text-center animate-float">
                   <div className="text-3xl font-bold text-green-400">20+</div>
                   <div className="text-sm text-gray-200">Years Experience</div>
                 </div>
-                <div className="text-center">
+                <div className="text-center animate-float-delay-1">
                   <div className="text-3xl font-bold text-green-400">100+</div>
                   <div className="text-sm text-gray-200">Projects Completed</div>
                 </div>
-                <div className="text-center">
+                <div className="text-center animate-float-delay-2">
                   <div className="text-3xl font-bold text-green-400">2</div>
                   <div className="text-sm text-gray-200">Countries Served</div>
                 </div>
@@ -217,38 +243,38 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
+      <section id="about" className={`py-20 bg-white animate-on-scroll ${visibleSections.has('about') ? 'visible' : ''}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              About <span className="text-green-600">Our Company</span>
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-slide-left ${visibleSections.has('about') ? 'visible' : ''}`}>
+              About <span className="text-green-600 animate-gradient-text">Our Company</span>
             </h2>
-            <div className="w-24 h-1 bg-green-600 mx-auto"></div>
+            <div className={`w-24 h-1 bg-green-600 mx-auto animate-scale-up ${visibleSections.has('about') ? 'visible' : ''}`}></div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className={`text-lg text-gray-700 leading-relaxed animate-slide-right animate-stagger-1 ${visibleSections.has('about') ? 'visible' : ''}`}>
                 With over <strong>20 years</strong> empowering large enterprises across India and the Middle East, 
                 Hakeemi Financial Consultancy & Transformation provides strategic financial guidance to help 
                 businesses reach ambitious goals. Our experts dive deep to understand your operations, then 
                 leverage analytical models, bespoke KPI dashboards, and data visualizations to deliver actionable insights.
               </p>
               
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className={`text-lg text-gray-700 leading-relaxed animate-slide-right animate-stagger-2 ${visibleSections.has('about') ? 'visible' : ''}`}>
                 Our services encompass everything from high-level advisory to detailed budgeting, cost optimization, 
                 and process enhancement. We customize financial best practices to boost profitability, streamline 
                 operations, mitigate risk, and drive well-informed decision making for sustainable growth.
               </p>
 
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className={`text-lg text-gray-700 leading-relaxed animate-slide-right animate-stagger-3 ${visibleSections.has('about') ? 'visible' : ''}`}>
                 Armed with state-of-the-art tools, our team operates as an extension of your financial leadership 
                 in plain language. We become long-term partners in prosperity through financial mastery, guiding 
                 global expansions and daily decisions with equal dexterity.
               </p>
 
               <Button 
-                className="bg-green-600 hover:bg-green-700 text-white"
+                className={`bg-green-600 hover:bg-green-700 text-white animate-bounce-in animate-stagger-4 animate-pulse-green ${visibleSections.has('about') ? 'visible' : ''}`}
                 onClick={() => scrollToSection('contact')}
               >
                 Contact Us to Elevate Your Business
@@ -346,21 +372,21 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-white">
+      <section id="services" className={`py-20 bg-white animate-on-scroll ${visibleSections.has('services') ? 'visible' : ''}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our <span className="text-green-600">Services</span>
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-slide-left ${visibleSections.has('services') ? 'visible' : ''}`}>
+              Our <span className="text-green-600 animate-gradient-text">Services</span>
             </h2>
-            <div className="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <div className={`w-24 h-1 bg-green-600 mx-auto mb-6 animate-scale-up ${visibleSections.has('services') ? 'visible' : ''}`}></div>
+            <p className={`text-xl text-gray-600 max-w-3xl mx-auto animate-slide-right ${visibleSections.has('services') ? 'visible' : ''}`}>
               Comprehensive financial solutions tailored to drive your business forward
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <Card key={index} className={`group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-scale-up animate-stagger-${index + 1} ${visibleSections.has('services') ? 'visible' : ''}`}>
                 <CardHeader>
                   <div className="flex items-center space-x-4 mb-4">
                     <div className="p-3 bg-green-100 rounded-lg group-hover:bg-green-600 transition-colors">
