@@ -101,9 +101,8 @@ function App() {
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-green-100 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-3">
-              <img src={logo} alt="Hakeemi Logo" className="h-10 w-auto" />
-              <span className="font-bold text-xl text-green-800 hidden sm:block">HAKEEMI</span>
+            <div className="flex items-center">
+              <img src={logo} alt="Hakeemi Logo" className="h-12 w-auto hover:scale-105 transition-transform duration-200" />
             </div>
             
             {/* Desktop Navigation */}
@@ -552,9 +551,8 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <img src={logo} alt="Hakeemi Logo" className="h-10 w-auto" />
-                <span className="font-bold text-xl">HAKEEMI</span>
+              <div className="flex items-center">
+                <img src={logo} alt="Hakeemi Logo" className="h-14 w-auto" />
               </div>
               <p className="text-gray-400">
                 Empowering your financial future through innovative strategies and transformative solutions.
