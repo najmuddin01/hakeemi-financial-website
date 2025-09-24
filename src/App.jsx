@@ -20,6 +20,7 @@ import {
 } from 'lucide-react'
 import './App.css'
 import logo from './assets/logo-transparent-new.png'
+import founderImage from './assets/founder-image.jpg'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -330,9 +331,13 @@ function App() {
             <div className="text-center">
               <div className="relative inline-block">
                 <div className="w-80 h-80 bg-gradient-to-br from-green-400 to-blue-500 rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <div className="w-72 h-72 bg-white rounded-full flex items-center justify-center">
-                    <Users className="h-32 w-32 text-green-600" />
-                  </div>
+              <div className="w-72 h-72 bg-white rounded-full flex items-center justify-center overflow-hidden shadow-2xl">
+                <img 
+                  src={founderImage} 
+                  alt="Hakeem Fakhruddin - Founder" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
                 </div>
                 <div className="absolute -bottom-4 -right-4 bg-green-600 text-white p-3 rounded-full">
                   <Award className="h-6 w-6" />
